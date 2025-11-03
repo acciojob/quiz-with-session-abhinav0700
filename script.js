@@ -61,9 +61,10 @@ function renderQuestions() {
       choiceInput.name = `question-${i}`;
       choiceInput.value = choice;
 
-      // Restore saved progress
+      // ✅ Restore saved progress (set both property & attribute)
       if (userAnswers[i] === choice) {
         choiceInput.checked = true;
+        choiceInput.setAttribute("checked", "true"); // <-- important for Cypress
       }
 
       // When user selects an answer
